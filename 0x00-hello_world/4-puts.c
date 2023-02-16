@@ -3,7 +3,6 @@ int main(void)
 {
 	char my_sentence[] = "\"Programming is like building a multilingual puzzle";
 
-	puts(my_sentence);
-	
-	return (0);
+puts(my_sentence);
+return (0);
 }
