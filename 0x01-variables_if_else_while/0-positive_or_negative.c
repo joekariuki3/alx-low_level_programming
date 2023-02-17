@@ -10,7 +10,7 @@
 /**
  * main - start of the program
  * Return: 0 for sucess
- * /
+*/
 int main(void)
 {
 int n;
