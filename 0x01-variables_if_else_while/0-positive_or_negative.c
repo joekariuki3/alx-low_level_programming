@@ -7,6 +7,8 @@
 
 /* more headers goes there */
 
+#include<stdio.h>
+
 /**
  * main - start of the program
  * Return: 0 for sucess
@@ -21,15 +23,15 @@ n = rand() - RAND_MAX / 2;
 
 if (n > 0)
 {
-	printf("is positive");
+	printf("is positive\n");
 }
 else if (n < 0)
 {
-	printf("is negative");
+	printf("is negative\n");
 }
 else
 {
-	printf("is zero");
+	printf("is zero\n");
 }
 return (0);
 }
