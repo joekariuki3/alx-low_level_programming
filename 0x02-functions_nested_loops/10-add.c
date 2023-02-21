@@ -7,7 +7,7 @@
   *
   * Return: result
   */
-void add(int, int)
+int add(int, int)
 {
 	int a, b, answer = 0;
 
