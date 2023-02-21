@@ -3,7 +3,9 @@
 /**
   * add - Adds two integers
   *
-  *@int: requred
+  *@a: requred
+  *
+  *@b: requred
   *
   * Return: result
   */
