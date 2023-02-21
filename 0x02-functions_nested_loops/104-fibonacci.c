@@ -7,19 +7,20 @@
   */
 int main(void)
 {
-	int a = 1, b = 2, i;
+int i, n = 98;
+    unsigned int fib1 = 1, fib2 = 2, sum;
 
-	printf("%d, %d", a, b);
+    printf("%u, %u", fib1, fib2);
 
-	for (i = 2; i < 98; i++)
-	{
-		int c;
+    for (i = 2; i < n; i++)
+    {
+        sum = fib1 + fib2;
+        printf(", %u", sum);
+        fib1 = fib2;
+        fib2 = sum;
+    }
 
-		c = a + b;
-		printf("%d, ", c);
-		a = b;
-		b = c;
-	}
-	printf("\n");
-	return (0);
+    printf("\n");
+
+    return 0;
 }
