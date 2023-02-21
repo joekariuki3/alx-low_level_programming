@@ -7,7 +7,7 @@
  *
  * Return: 0 sucess
  */
-int _abs(int);
+int _abs(int)
 {
 	int i
 	if (i < 0)
