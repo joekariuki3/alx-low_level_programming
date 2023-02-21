@@ -3,7 +3,7 @@
 /**
  * print_sign - print sign of a number
  *
- *@c: is requred as input
+ *@n: is requred as input
  *
  * Return: 1 sucess
  */
