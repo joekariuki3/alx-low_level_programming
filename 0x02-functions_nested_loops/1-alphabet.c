@@ -1,6 +1,7 @@
 /*
  * include header files
  */
+#include<stdio.h>
 #include"main.h"
 
 /**
