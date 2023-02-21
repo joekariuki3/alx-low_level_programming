@@ -3,7 +3,7 @@
 /**
  * _abs - print absolute value of a number
  *
- *@int: is requred as input
+ *@i: is requred as input
  *
  * Return: 0 sucess
  */
