@@ -1,7 +1,6 @@
 /*
  * include header files
  */
-#include<stdio.h>
 #include"main.h"
 
 /**
@@ -14,7 +13,7 @@ void print_alphabet(void)
 
 	while (start <= 'z')
 	{
-		putchar(start);
+		_putchar(start);
 		start++;
 	}
 	putchar('\n');
