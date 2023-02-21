@@ -9,15 +9,9 @@
  */
 int _isalpha(int c)
 {
-	char start = 'a', upper = 'A';
-
-	while (start <= 'z' || upper <= 'Z')
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 	{
-		if (c == start && c == upper)
-		{
-			return (1);
-		}
-		start++;
+		return (1);
 	}
 	return (0);
 }
