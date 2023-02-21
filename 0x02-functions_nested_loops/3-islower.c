@@ -1,7 +1,9 @@
 #include"main.h"
 
 /**
- * print_alphabet - is alphabet lowercase?
+ * _islower - is alphabet lowercase?
+ *
+ *@c: is requred as input
  *
  * Return: 1 sucess
  */
@@ -11,7 +13,7 @@ int _islower(int c)
 
 	while (start <= 'z')
 	{
-		if (c==start)
+		if (c == start)
 		{
 			return (1);
 		}
