@@ -6,6 +6,8 @@
 /**
  * main - test for positive or negative
  *
+ *@i: int required
+ *
  * Return: 0 for succes
  */
 int main(void)
