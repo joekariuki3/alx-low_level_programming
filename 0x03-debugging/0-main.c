@@ -6,11 +6,9 @@
 /**
  * main - test for positive or negative
  *
- *@int: required
- *
  * Return: 0 for succes
  */
-int main(int)
+int main(void)
 {
 	int i;
 
