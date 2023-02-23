@@ -9,15 +9,9 @@
  */
 int _isdigit(int c)
 {
-	int start = 0;
-
-	while (start <= 10)
-	{
-		if (c == start)
+	if (c => 48 && c <= 57)
 		{
 			return (1);
 		}
-		start++;
-	}
 	return (0);
 }
