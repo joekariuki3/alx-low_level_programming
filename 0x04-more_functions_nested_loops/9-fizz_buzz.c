@@ -18,24 +18,25 @@ int main(void)
 	{
 		if (i % (3 * 5) == 0)
 		{
-			printf("FizzBuzz%c", 32);
-			i++;
+			printf("FizzBuzz");
 		}
 		else if (i % 3 == 0)
 		{
-			printf("Fizz%c", 32);
-			i++;
+			printf("Fizz");
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz%c", 32);
-			i++;
+			printf("Buzz");
 		}
 		else
 		{
-			printf("%d%c", i, 32);
-			i++;
+			printf("%d", i);
 		}
+		if (i != 100)
+		{
+			printf(" ");
+		}
+		i++;
 	}
 	printf("\n");
 	return (0);
