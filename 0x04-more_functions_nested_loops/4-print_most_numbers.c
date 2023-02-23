@@ -19,5 +19,4 @@ void print_most_numbers(void)
 		start++;
 	}
 	_putchar('\n');
-	return (0);
 }
