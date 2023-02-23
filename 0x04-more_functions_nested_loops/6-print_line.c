@@ -20,5 +20,4 @@ void print_line(int n)
 		line++;
 	}
 	_putchar('\n');
-	return (0);
 }
