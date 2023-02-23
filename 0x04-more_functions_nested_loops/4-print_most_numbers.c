@@ -10,7 +10,7 @@ void print_most_numbers(void)
 	int start;
 
 	start = 0;
-	while (start <= 10)
+	while (start < 10)
 	{
 		if (start != 2 && start != 4)
 		{
