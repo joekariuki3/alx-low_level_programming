@@ -4,11 +4,11 @@
 #include"main.h"
 
 /**
- *positive_or_negative- test for positive or negative
- *@i: Required int
+ *main - test for positive or negative
+ *
  * Return: 0 for succes
  */
-positive_or_negative(int i)
+int main(void)
 {
 	i = 0;
 
