@@ -4,14 +4,12 @@
 #include"main.h"
 
 /**
- * main - test for positive or negative
- *
+ *positive_or_negative- test for positive or negative
+ *@i: Required int
  * Return: 0 for succes
  */
-int main(void)
+positive_or_negative(int i)
 {
-	int i;
-
 	i = 0;
 
 	positive_or_negative(i);
