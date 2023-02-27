@@ -10,7 +10,7 @@
  *
  * Return: Nothing
  */
-int _puts(char *str)
+void_puts(char *str)
 {
 	int i;
 
