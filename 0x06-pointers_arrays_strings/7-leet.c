@@ -2,25 +2,25 @@
 
 /**
  * leet - encodes a string
- * @str: requires a character
+ * @s: requires a character
  * Return: a char
  */
-char *leet(char *str)
+char *leet(char *s)
 {
-	char letters[] = "aAeEoOtTlL";
-	char numbers[] = "44330771";
-	int i, j;
+	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j < 10; j++)
-		{
-			if (str[i] == letters[j])
-			{
-				str[i] = numbers[j];
-				break;
-			}
-		}
+		while (s[i] == 'a' || s[i] == 'A')
+			s[i] = '4';
+		while (s[i] == 'e' || s[i] == 'E')
+			s[i] = '3';
+		while (s[i] == 'o' || s[i] == 'O')
+			s[i] = '0';
+		while (s[i] == 't' || s[i] == 'T')
+			s[i] = '7';
+		while (s[i] == 'l' || s[i] == 'L')
+			s[i] = '1';
 	}
-	return (str);
+	return (s);
 }
