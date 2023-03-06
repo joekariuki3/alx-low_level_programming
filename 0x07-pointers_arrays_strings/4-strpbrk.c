@@ -4,7 +4,7 @@
  * _strpbrk - Search a string for any of a set of bytes.
  * @s: string
  * @accept: string to match
- * Return: Pointer to the byte in string *s that matches 
+ * Return: Pointer to the byte in string *s that matches
  * one of the bytes in array of char in *accept
  * or NULL if no such byte is found.
  */
