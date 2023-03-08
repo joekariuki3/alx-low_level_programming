@@ -4,7 +4,7 @@
 #include"main.h"
 
 /**
- *void _print_rev_recursion - prints a string in reverse using recussion
+ *_print_rev_recursion - prints a string in reverse using recussion
  *
  * @s: string to be printed
  *
