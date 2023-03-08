@@ -56,4 +56,4 @@ int findsrc(char *s, char c, int i, int p)
 		p = i;
 
 	return (findsrc(s, c, i + 1, p));
-
+}
