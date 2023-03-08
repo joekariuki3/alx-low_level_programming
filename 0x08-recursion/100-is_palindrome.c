@@ -1,5 +1,7 @@
 #include "main.h"
 
+int get_length(char *s);
+int my_pal(char *s, int l);
 /**
  * is_palindrome - check if a string is a palindrome
  * @s: char array string
