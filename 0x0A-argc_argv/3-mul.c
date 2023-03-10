@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 		a = atoi(argv[1]);
 		mult = a * 1;
 		printf("%d\n", mult);
+		return (0);
 	}
 	else if (argc > 1 && argc < 4)
 	{
