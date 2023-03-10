@@ -25,11 +25,11 @@ int main(int argc, char *argv[])
 		b = atoi(argv[2]);
 		mult = a * b;
 		printf("%d\n", mult);
+		return (0);
 	}
 	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-	return (0);
 }
