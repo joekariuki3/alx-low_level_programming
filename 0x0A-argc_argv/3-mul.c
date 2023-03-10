@@ -11,10 +11,17 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc > 1 && argc < 4)
-	{
-		int mult = 1, a, b;
+	int mult = 1, a, b;
 
+
+	if (argc > 1 && argc < 3)
+        {
+                a = atoi(argv[1]);
+                mult = a * 1;
+                printf("%d\n", mult);
+        }
+	else if (argc > 1 && argc < 4)
+	{
 		a = atoi(argv[1]);
 		b = atoi(argv[2]);
 		mult = a * b;
