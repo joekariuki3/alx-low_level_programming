@@ -13,13 +13,12 @@ int main(int argc, char *argv[])
 {
 	int mult = 1, a, b;
 
-
 	if (argc > 1 && argc < 3)
-        {
-                a = atoi(argv[1]);
-                mult = a * 1;
-                printf("%d\n", mult);
-        }
+	{
+		a = atoi(argv[1]);
+		mult = a * 1;
+		printf("%d\n", mult);
+	}
 	else if (argc > 1 && argc < 4)
 	{
 		a = atoi(argv[1]);
