@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	(void) argc;
 	if (argv[1] && argv[2])
 	{
-		int a,b;
+		int a, b;
 		int mult = 1;
 
 		a = atoi(argv[1]);
