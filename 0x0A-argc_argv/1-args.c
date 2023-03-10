@@ -10,9 +10,11 @@
  */
 int main(int argc, char *argv[] __attribute__((unused)))
 {
-	if (argc >= 0)
+	int count;
 	{
-		printf("%d\n", argc);
+		for (count = 0; count < argc; count++)
+		{}
+		printf("%d\n", argc - 1);
 	}
 	return (0);
 }
