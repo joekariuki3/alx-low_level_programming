@@ -11,17 +11,12 @@
  */
 int main(int argc, char *argv[])
 {
-	int mult = 1, a, b;
+	(void) argc;
+	if (argv[1] && argv[2])
+	{
+		int a,b;
+		int mult = 1;
 
-	if (argc > 1 && argc < 3)
-	{
-		a = atoi(argv[1]);
-		mult = a * 1;
-		printf("%d\n", mult);
-		return (0);
-	}
-	else if (argc > 1 && argc < 4)
-	{
 		a = atoi(argv[1]);
 		b = atoi(argv[2]);
 		mult = a * b;
