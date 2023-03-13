@@ -32,7 +32,6 @@ char *_strdup(char *str)
 		}
 		name[i] = '\0';
 		return (name);
-		free(name);
 	}
 	else
 	{
