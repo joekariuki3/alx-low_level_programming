@@ -28,16 +28,23 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		for (i = 0; i < size1; i++)
+		if (s1 != NULL || s2 != NULL)
 		{
-			fstr[i] = s1[i];
+			for (i = 0; i < size1; i++)
+			{
+				fstr[i] = s1[i];
+			}
+			i++;
+			for (j = 0; j < size3; j++)
+			{
+				fstr[i + j] = s2[j];
+			}
+			fstr[j + 1] = '\0';
+			return (fstr);
 		}
-		i++;
-		for (j = 0; j < size3; j++)
+		else
 		{
-			fstr[i + j] = s2[j];
+			return (NULL);
 		}
-		fstr[j + 1] = '\0';
-		return (fstr);
 	}
 }
