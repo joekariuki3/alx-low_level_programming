@@ -16,6 +16,10 @@ char *str_concat(char *s1, char *s2)
 	char *fstr;
 	int size1, size2, size3, i, j;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	for (size1 = 0; s1[size1] != '\0'; size1++)
 		;
 	for (size2 = 0; s2[size2] != '\0'; size2++)
@@ -32,14 +36,13 @@ char *str_concat(char *s1, char *s2)
 		{
 			for (i = 0, j = 0; i < size3; i++)
 			{
-				if ( i < size1)
+				if (i < size1)
 				{
 					fstr[i] = s1[i];
 				}
 				else
 				{
-					fstr[i] = s2[j];
-					j++;
+					fstr[i] = s2[j++];
 				}
 			}
 			fstr[i + 1] = '\0';
