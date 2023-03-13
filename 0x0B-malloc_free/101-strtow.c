@@ -11,7 +11,7 @@ char **strtow(char *str)
 		return (NULL);
 	}
 	/* Count the number of words in the string */
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (!isspace(str[i]))
 		{
