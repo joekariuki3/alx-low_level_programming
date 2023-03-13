@@ -19,13 +19,12 @@ char *_strdup(char *str)
 		unsigned int i, size;
 
 		for (size = 0; str[size] != '\0'; size++)
-
+			;
 		name = malloc(size * sizeof(char) + 1);
 		if (name == NULL)
 		{
 			return (NULL);
 		}
-
 		for (i = 0; i < size; i++)
 		{
 			name[i] = str[i];
