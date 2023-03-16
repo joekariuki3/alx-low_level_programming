@@ -1,8 +1,9 @@
 /*
  * include standard lib
+ * and custom main.h file
  */
 #include<stdlib.h>
-
+#include "main.h"
 /**
  *malloc_checked - asigns memory using malloc
  *@b: required int size of the memory to allocate
@@ -17,5 +18,5 @@ void *malloc_checked(unsigned int b)
 	{
 		exit(98);
 	}
-	return (digits)
+	return (digits);
 }
