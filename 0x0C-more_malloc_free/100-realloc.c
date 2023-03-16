@@ -3,7 +3,6 @@
  * and main header
  */
 #include<stdlib.h>
-#include<string.h>
 #include"main.h"
 
 /**
@@ -44,10 +43,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	else
 	{
 		/* copy items from old ptr to newptr */
-		/*memcpy(newptr, ptr, (old_size < new_size) ? old_size : new_size);*/
 		for (i = 0; i < old_size && i < new_size; i++)
 		{
-			newptr[i] = ((char *) ptr)[i];
+			newptr[i] = ((char *) ptr)[i]; /* Type cast ptr from void to char  */
 		}
 		free(ptr);
 		return (newptr);
