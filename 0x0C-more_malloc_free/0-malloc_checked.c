@@ -11,9 +11,9 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	int *digits;
+	void *digits;
 
-	digits = malloc(b * sizeof(*digits));
+	digits = malloc(b);
 	if (digits == NULL)
 	{
 		exit(98);
