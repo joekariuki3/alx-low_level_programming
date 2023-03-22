@@ -1,39 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <udis86.h>
+#include "function_pointers.h"
+/**
+  * print_opcodes - prints opcodes
+  * @start: array from argv from main function
+  * @n: number of arguments in array argv
+  */
+void print_opcodes(unsigned char *start, int n)
+{
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		printf("%02x ", start[i]);
+	}
+	printf("\n");
+}
 
 /**
-  * main - start of the function
-  * @argc: argument count. number of elements on array argv
-  * @argv: argument array
-  *
-  * Return:integet
-  */
+ * main - start of main function
+ * @argc: number of elements in array argv
+ * @argv: array of elements passes
+ * Return: int 0 0n sucess
+ */
 int main(int argc, char *argv[])
 {
-	ud_t ud_obj;
-	int val = 0, i = 0;
+	int n;
 
-	if (argc == 2)
+	if (argc != 2)
 	{
-		val = atoi(argv[1]);
-
-		if (val < 0)
-		{
-			printf("Error\n");
-			exit(2);
-		}
-
-		ud_unit(&ud_obj);
-		ud_set_input_buffer(&ud_obj, argv[1], val);
-		ud_set_mode(&ud_obj, 64);
-		ud_set_syntax(&ud_obj, UD_SYN_INTEL);
-
-		while (ud_disassemble(&ud_obj))
-		{
-			printf("\t%s\n", ud_insn_hex(&ud_obj));
-		}
+		printf("Error\n");
+		return (1);
 	}
-
+	n = atoi(argv[1]);
+	if (n < 0)
+	{
+		printf("Error\n");
+		return (2);
+	}
+	print_opcodes((unsigned char *)main, n);
 	return (0);
 }
