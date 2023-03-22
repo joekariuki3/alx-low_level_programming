@@ -10,11 +10,14 @@ void print_opcodes(unsigned char *start, int n)
 {
 	int i;
 
-	for (i = 0; i < n; i++)
+	if (start != NULL)
 	{
-		printf("%02x ", start[i]);
+		for (i = 0; i < n; i++)
+		{
+			printf("%02x ", start[i]);
+		}
+		printf("\n");
 	}
-	printf("\n");
 }
 
 /**
@@ -27,6 +30,10 @@ int main(int argc, char *argv[])
 {
 	int n;
 
+	if (argv == NULL)
+	{
+		return (0);
+	}
 	if (argc != 2)
 	{
 		printf("Error\n");
