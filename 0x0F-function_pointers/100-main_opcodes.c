@@ -10,19 +10,20 @@ void print_opcodes(unsigned char *start, int n)
 {
 	int i;
 
-	if (start != NULL)
+	if (start == NULL)
 	{
-		for (i = 0; i < n; i++)
-		{
-			if (i == n - 1)
-			{
-				printf("%02hhx\n", start[i]);
-				break;
-			}
-			printf("%02x ", start[i]);
-		}
-		printf("\n");
+		return (0)
 	}
+	for (i = 0; i < n; i++)
+	{
+		if (i == n - 1)
+		{
+			printf("%02hhx\n", start[i]);
+			break;
+		}
+		printf("%02x ", start[i]);
+	}
+	printf("\n");
 }
 
 /**
