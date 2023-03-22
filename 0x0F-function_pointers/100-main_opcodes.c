@@ -14,7 +14,7 @@ void print_opcodes(unsigned char *start, int n)
 	{
 		if (i == n - 1)
 		{
-			printf("%02hhx\n", start[i]);
+			printf("%02hhx", start[i]);
 			break;
 		}
 		printf("%02x ", start[i]);
