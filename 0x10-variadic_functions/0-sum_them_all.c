@@ -2,8 +2,8 @@
 
 /**
  * sum_them_all - sums all the arguments
- * @n: number of arguments passed 
- * Return sum for sucess and 0 if arguments == 0
+ * @n: number of arguments passed
+ * Return: sum for sucess and 0 if arguments == 0
  */
 int sum_them_all(const unsigned int n, ...)
 {
