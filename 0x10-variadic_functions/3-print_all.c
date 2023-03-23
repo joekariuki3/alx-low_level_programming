@@ -1,83 +1,77 @@
-#include"variadic_functions.h"
+#include "variadic_functions.h"
 
 /**
- * print_all function is designed to print various
- * types of data based on the provided format string.
- * The function accepts a format string and a variable number of arguments.
- * @format: string consists of characters that
- * represent the type of data to be printed:
- * - 'c' for char
- * - 'i' for integer
- * - 'f' for float
- * - 's' for string (char *)
- * Any other character is ignored.
- *
- * If the string (char *) is NULL, it will print (nil) instead.
- * At the end of the function, a new line is printed.
- *
- * The function is limited to:
- * - 2 while loops
- * - 2 if statements
- * - 9 variable declarations
- * - Using printf function for printing
+ * _printchar - print char type element from va_list
+ * @list: va_list passed to function
+ */
+void _printchar(va_list list)
+{
+	printf("%c", va_arg(list, int));
+}
+
+/**
+ * _printstr - print string element from va_list
+ * @list: va_list passed to function
+ */
+void _printstr(va_list list)
+{
+	char *s;
+
+	s = va_arg(list, char *);
+	if (s == NULL)
+		s = "(nil)";
+	printf("%s", s);
+}
+
+/**
+ * _printfloat - print float type element from va_list
+ * @list: va_list passed to function
+ */
+void _printfloat(va_list list)
+{
+	printf("%f", va_arg(list, double));
+}
+
+/**
+ * _printint - print int type element from va_list
+ * @list: va_list passed to function
+ */
+void _printint(va_list list)
+{
+	printf("%d", va_arg(list, int));
+}
+
+/**
+ * print_all - print anything passed if char, int, float, or string.
+ * @format: string of formats to use and print
  */
 void print_all(const char * const format, ...)
 {
+	unsigned int i, j;
 	va_list args;
-	int i = 0;
-	char c;
-	int integer;
-	float flt;
-	char *str;
-	int first_print = 1;
+	char *sep;
 
-	/* Initialize the variable argument list */
+	checker storage[] = {
+		{ "c", _printchar },
+		{ "f", _printfloat },
+		{ "s", _printstr },
+		{ "i", _printint }
+	};
+
+	i = 0;
+	sep = "";
 	va_start(args, format);
-	/* Process each character in the format string */
-	while (format[i])
+	while (format != NULL && format[i / 4] != '\0')
 	{
-		/* Determine the type of data to be printed based on the current character */
-		switch (format[i])
+		j = i % 4;
+		if (storage[j].type[0] == format[i / 4])
 		{
-			case 'c':
-				c = (char)va_arg(args, int);
-				if (!first_print)
-					printf(", ");
-				printf("%c", c);
-				first_print = 0;
-				break;
-			case 'i':
-				integer = va_arg(args, int);
-				if (!first_print)
-					printf(", ");
-				printf("%d", integer);
-				first_print = 0;
-				break;
-			case 'f':
-				flt = (float)va_arg(args, double);
-				if (!first_print)
-					printf(", ");
-				printf("%f", flt);
-				first_print = 0;
-				break;
-			case 's':
-				str = va_arg(args, char *);
-				if (!first_print)
-					printf(", ");
-				if (str)
-					printf("%s", str);
-				else
-					printf("(nil)");
-				first_print = 0;
-				break;
-			default:
-				break;
+			printf("%s", sep);
+			storage[j].f(args);
+			sep = ", ";
 		}
 		i++;
 	}
-	/* Print a new line at the end of the function */
 	printf("\n");
-
-	/*  Clean up the variable argument list */
 	va_end(args);
 }
