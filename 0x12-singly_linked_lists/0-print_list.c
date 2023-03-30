@@ -7,24 +7,22 @@
  */
 size_t print_list(const list_t *h)
 {
-	const list_t *current;
-	size_t c;
+	size_t nodesize;
 
-	c = 0;
-	current = h;
-	while (current)
+	nodesize = 0;
+	while (h != NULL)
 	{
-		if (current->str != NULL)
-		{
-			printf("[%u] %s\n", current->len, current->str);
-			current = current->next;
-			c++;
-		}
-		else
+		if (h->str == NULL)
 		{
 			printf("[0] (nil)\n");
 		}
+		else
+		{
+			printf("[%d] %s\n", h->len, h->str);
+			h = h->next;
+			nodesize++;
+		}
 	}
 
-	return (c);
+	return (nodesize);
 }
