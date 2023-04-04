@@ -21,7 +21,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		temp = temp->next;
 	}
-	/* if we reach end of the list before geting to idx the node cannot be inserted at idx */
+	/*
+	 * if we reach end of the list before geting
+	 * to idx the node cannot be inserted at idx
+	 */
 	if (temp == NULL)
 		return (NULL);
 	/* asign memory to the newnode*/
