@@ -9,21 +9,21 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	unsigned int count = 0;
+	listint_t *temp;
 
 	/* check if list is empty */
 	if (head == NULL)
 		return (NULL);
+	temp = head;
 	/* loop throug nodes in the list */
-	while (head != NULL)
+	while (count < index)
 	{
-		count++;
-		head = head->next;
-		if (count == index)
+		if (temp == NULL)
 		{
-			return (head);
+			return (NULL);
 		}
+		temp = temp->next;
+		count++;
 	}
-	if (index > count)
-		return (NULL);
-	return(NULL);
+	return (temp);
 }
