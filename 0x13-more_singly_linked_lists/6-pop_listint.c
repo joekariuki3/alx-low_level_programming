@@ -10,6 +10,9 @@ int pop_listint(listint_t **head)
 	int rmNodeData;
 	listint_t *temp;
 
+	/* Check if list is empty*/
+	if (head == NULL)
+		return (0);
 	/* save 1st node data to my variable*/
 	rmNodeData = (*head)->n;
 	/* save 1st node to temp */
