@@ -12,7 +12,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	/* check if list is empty */
 	if (head == NULL)
-		return (NULL)
+		return (NULL);
 	/* loop throug nodes in the list */
 	while (head != NULL)
 	{
