@@ -20,22 +20,35 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	for (i = 0; i < idx - 1 && temp != NULL; i++)
 	{
 		temp = temp->next;
+		/* check if we reach end of list */
+		if (temp == NULL)
+			return (NULL);
 	}
-	/*
-	 * if we reach end of the list before geting
-	 * to idx the node cannot be inserted at idx
-	 */
-	if (temp == NULL)
-		return (NULL);
 	/* asign memory to the newnode*/
 	newnode = malloc(sizeof(listint_t));
 	if (newnode == NULL)
+	{
+		free(newnode);
 		return (NULL);
+	}
 	/* assign n to the new node*/
 	newnode->n = n;
-	/* asign temp next value to new node next value*/
-	newnode->next = temp->next;
-	/* assign temp next value to be address of newnode*/
-	temp->next = newnode;
+	if (idx == 0)
+	{
+		*head = newnode;
+		newnode->next = temp;
+	}
+	else if (temp->next)
+	{
+		/* asign temp next value to new node next value*/
+		newnode->next = temp->next;
+		/* assign temp next value to be address of newnode*/
+		temp->next = newnode;
+	}
+	else
+	{
+		newnode->next = NULL;
+		temp->next = newnode;
+	}
 	return (newnode);
 }
