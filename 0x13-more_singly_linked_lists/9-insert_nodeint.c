@@ -9,7 +9,7 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int i = 0;
+	unsigned int i;
 	listint_t *newnode,  *temp;
 
 	/* check if the list is empty if yes we return NULL */
@@ -17,7 +17,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	temp = *head;
 	/* loop throug the list til one node idx */
-	for (i = 0; i < idx - 1 && temp != NULL; i++)
+	for (i = 1; temp && i < idx; i++)
 	{
 		temp = temp->next;
 		/* check if we reach end of list */
