@@ -3,7 +3,8 @@
 /**
  * get_bit - gets a bit from a specific index
  * @n: where the bit will be checked in
- * @index: the position the bit to get 
+ * @index: the position the bit to get
+ * Return: bit of the value at index or -1 if it fails
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
