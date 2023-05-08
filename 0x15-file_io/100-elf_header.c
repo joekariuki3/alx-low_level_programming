@@ -21,9 +21,9 @@ void read_elf_header(int fd, Elf64_Ehdr *header)
 void validate_elf_file(Elf64_Ehdr *header)
 {
 	if (header->e_ident[EI_MAG0] != ELFMAG0 ||
-			header->e_ident[EI_MAG1] != ELFMAG1 ||
-			header->e_ident[EI_MAG2] != ELFMAG2 ||
-			header->e_ident[EI_MAG3] != ELFMAG3)
+		header->e_ident[EI_MAG1] != ELFMAG1 ||
+		header->e_ident[EI_MAG2] != ELFMAG2 ||
+		header->e_ident[EI_MAG3] != ELFMAG3)
 	{
 		fprintf(stderr, "Error: not an ELF file\n");
 		exit(98);
