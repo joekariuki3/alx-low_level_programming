@@ -1,3 +1,2 @@
 #!/bin/bash
-gcc -c  -fpic *.c
-gcc -shared -o liball.so *.o
+gcc -shared -fPIC $(find . -maxdepth 1 -type f -name "*.c") -o liball.so
