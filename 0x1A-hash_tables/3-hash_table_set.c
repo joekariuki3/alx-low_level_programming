@@ -13,6 +13,10 @@ hash_node_t *createNode(const char *key, const char *value)
 	if (element == NULL)
 		return (NULL);
 	element->key = strdup(key);
+	if (value == NULL)
+	{
+		element->value = NULL;
+	}
 	element->value = strdup(value);
 	element->next = NULL;
 
