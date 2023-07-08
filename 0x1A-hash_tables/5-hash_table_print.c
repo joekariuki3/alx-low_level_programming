@@ -10,7 +10,7 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *temp = NULL;
 	int commer;
 
-	if (ht->size < 1 || ht->array == NULL)
+	if (ht == NULL || ht->size < 1 || ht->array == NULL)
 	{
 		return;
 	}
