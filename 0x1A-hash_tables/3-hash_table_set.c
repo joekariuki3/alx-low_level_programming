@@ -36,6 +36,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	unsigned const char *key_u = NULL;
 
+	if (ht == NULL || key == NULL)
+		return (0);
 	element_root = createNode(key, value);
 	if (element_root == NULL)
 		return (0);
