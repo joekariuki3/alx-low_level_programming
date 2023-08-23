@@ -1,0 +1,28 @@
+# make file using variables and also adding cleaning rules also use FLAGS
+
+CC = gcc
+SRC = main.c school.c
+# make main.c, school.c to main.o, school.o and save to OBJ variable 
+OBJ = $(SRC:.c=.o)
+NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# $^ is the value after : i.e $(OBJ)->main.o and school.o
+all: m.h $(OBJ)
+	$(CC) -o $(NAME) $^
+
+# forces rcompilation of all source files
+re: oclean all
+
+
+# remove all temp files from vi or emacs
+clean : 
+	$(RM)  *~ $(NAME)
+
+# remove all object files created
+oclean:
+	$(RM)  $(OBJ)
+
+
+# remove all objectfiles and temp files
+fclean: clean oclean
