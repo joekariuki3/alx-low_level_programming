@@ -5,7 +5,7 @@ SRC = main.c school.c
 # make main.c, school.c to main.o, school.o and save to OBJ variable 
 OBJ = $(SRC:.c=.o)
 NAME = school
-RM = fclean
+RM = rm
 
 # $^ is the value after : i.e $(OBJ)->main.o and school.o
 all:$(OBJ)
@@ -23,11 +23,11 @@ re: oclean all
 
 # remove all temp files from vi or emacs
 clean : 
-	rm -f *~ $(NAME)
+	$(RM) -f *~ $(NAME)
 
 # remove all object files created
 oclean:
-	rm -f  $(OBJ)
+	$(RM) -f  $(OBJ)
 
 
 # remove all objectfiles and temp files
