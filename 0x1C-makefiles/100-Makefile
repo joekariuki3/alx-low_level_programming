@@ -11,6 +11,9 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: m.h $(OBJ)
 	$(CC) -o $(NAME) $^
 
+# using PHONY for Rules that are not files
+.PHONEY: fclean oclean clean re
+
 # forces rcompilation of all source files
 re: oclean all
 
