@@ -29,4 +29,4 @@ oclean:
 fclean: clean oclean
 
 # using PHONY for Rules that are not files
-.PHONEY: fclean oclean clean re
+.PHONY: fclean oclean clean re
