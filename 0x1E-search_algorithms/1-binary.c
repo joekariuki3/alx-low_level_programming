@@ -12,9 +12,12 @@ int binary_search(int *array, size_t size, int value)
 	size_t left = 0, right = 0, mid = 0, newSize = 0;
 	int *startElement = NULL;
 
-	if (array == NULL)
+	if (!array || !size || !value)
 		return (-1);
-	left = 0;
+	if (size == 1 && array[size - 1] == value)
+		return (size - 1);
+	else if (size == 1 && array[size - 1] != value)
+		return (-1);
 	right = size - 1;
 
 	startElement = array;
@@ -29,7 +32,6 @@ int binary_search(int *array, size_t size, int value)
 		else if (value < array[mid])
 		{
 			right = mid - 1;
-
 			startElement = &array[0];
 			newSize = right - left + 1;
 			printArray(startElement, newSize);
@@ -37,7 +39,6 @@ int binary_search(int *array, size_t size, int value)
 		else
 		{
 			left = mid + 1;
-
 			startElement = &array[mid + 1];
 			newSize = right - left + 1;
 			printArray(startElement, newSize);
