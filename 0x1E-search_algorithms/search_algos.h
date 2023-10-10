@@ -15,6 +15,5 @@ void printString(int num, int *array);
 void printStringB(int num, int *array, int size);
 void printFound(size_t lowwer, size_t upper);
 int interpolation_search(int *array, size_t size, int value);
-/*  functions */
-
+int exponential_search(int *array, size_t size, int value);
 #endif
