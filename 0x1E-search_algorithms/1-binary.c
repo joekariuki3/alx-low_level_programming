@@ -21,7 +21,7 @@ int binary_search(int *array, size_t size, int value)
 	newSize = size;
 	printArray(startElement, newSize);
 
-	while (left < right)
+	while (left <= right)
 	{
 		mid = ((left + right) / 2);
 		if (value == array[mid])
