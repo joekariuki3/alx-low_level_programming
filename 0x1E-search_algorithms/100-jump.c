@@ -41,8 +41,6 @@ int jump_search(int *array, size_t size, int value)
 	}
 	return (-1);
 }
-
-
 /**
  * printFound - print the string
  * @lowwer: start of subarray
@@ -69,7 +67,6 @@ void printFound(size_t lowwer, size_t upper)
 	putchar(']');
 	putchar('\n');
 }
-
 /**
  * printString - print the string
  * @num: index in the array
@@ -93,7 +90,6 @@ void printString(int num, int *array)
 	putchar(']');
 	putchar('\n');
 }
-
 /**
  * printInteger - prints number value
  * @num: value to be printed
