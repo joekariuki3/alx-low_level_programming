@@ -23,7 +23,10 @@ int interpolation_search(int *array, size_t size, int value)
 	{
 		pos = low + (((double)(high - low) /
 					(array[high] - array[low])) * (value - array[low]));
-		printStringB(pos, array, (int)size);
+		if (pos <= size - 1)
+			printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
+		else
+			printf("Value checked array[%ld] is out of range\n", pos);
 		if (value == array[pos])
 			return (pos);
 		if (value < array[pos])
@@ -34,52 +37,9 @@ int interpolation_search(int *array, size_t size, int value)
 			low = pos;
 		}
 	}
-	printStringB((int)pos, array, (int)size);
+	if (pos <= size - 1)
+		printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
+	else
+		printf("Value checked array[%ld] is out of range\n", pos);
 	return (-1);
-}
-/**
- * printStringB - print the string
- * @num: index in the array
- * @array: pointer to the first element of array
- * @size: number of elements in the array
- */
-void printStringB(int num, int *array, int size)
-{
-	char string[256] = "Value checked array\n";
-	char stringB[256] = "is out of range\n";
-	int j = 0;
-
-	for (j = 0; string[j] != '\n'; j++)
-		putchar(string[j]);
-	putchar('[');
-	printInteger(num);
-	putchar(']');
-	putchar(' ');
-	if (num <= size - 1)
-	{
-		putchar('=');
-		putchar(' ');
-		putchar('[');
-		printInteger(array[num]);
-		putchar(']');
-	}
-	for (j = 0; stringB[j] != '\n'; j++)
-		putchar(stringB[j]);
-	putchar('\n');
-}
-/**
- * printInteger - prints number value
- * @num: value to be printed
- * Return: number to be printed
- */
-void printInteger(int num)
-{
-	if (num < 0)
-	{
-		putchar('-');
-		num = -num;
-	}
-	if (num / 10 != 0)
-		printInteger(num / 10);
-	putchar(num % 10 + '0');
 }
