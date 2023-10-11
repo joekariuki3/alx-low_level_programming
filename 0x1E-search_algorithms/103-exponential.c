@@ -21,15 +21,16 @@ int exponential_search(int *array, size_t size, int value)
 		return (-1);
 	if (value == array[0])
 		return (0);
+	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	while (i < size && array[i] < value)
 	{
 		i *= 2;
-		if (array[i] < value)
+		if (i < size - 1)
 			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	}
 	left = i / 2;
 	right = ((i < (size - 1)) ? i : (size - 1)) + 1;
-	printf("Value found between indexes [%ld] and [%ld]\n", left, right);
+	printf("Value found between indexes [%ld] and [%ld]\n", left, right - 1);
 	binaryResult = binary_search(&array[left], right - left, value);
 	return (binaryResult < 0 ? (int)binaryResult : (binaryResult + (int)left));
 }
