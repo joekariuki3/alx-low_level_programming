@@ -25,7 +25,7 @@ int exponential_search(int *array, size_t size, int value)
 	{
 		i *= 2;
 		if (array[i] < value)
-			printString((int)i, array);
+			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 	}
 	left = i / 2;
 	right = i < size ? i : size - 1;
@@ -46,7 +46,7 @@ int binary_search(int *array, size_t size, int value)
 	size_t left = 0, right = 0, mid = 0, newSize = 0;
 	int *startElement = NULL;
 
-	if (!array || !size || !value)
+	if (array == NULL || size == 0)
 		return (-1);
 	if (size == 1 && array[size - 1] == value)
 		return (size - 1);
@@ -89,60 +89,13 @@ int binary_search(int *array, size_t size, int value)
 void printArray(int *array, size_t newSize)
 {
 	size_t i = 0;
-	char string[256] = "Searching in array:\n";
 
-	for (i = 0; string[i] != '\n'; i++)
-		putchar(string[i]);
-	putchar(' ');
+	printf("Searching in array: ");
 	for (i = 0; i < newSize; i++)
 	{
-		printInteger(array[i]);
+		printf("%d", array[i]);
 		if (i < newSize - 1)
-		{
-			putchar(',');
-			putchar(' ');
-		}
+			printf(", ");
 	}
-	putchar('\n');
-}
-
-/**
- * printInteger - prints number value
- * @num: value to be printed
- * Return: number to be printed
- */
-void printInteger(int num)
-{
-	if (num < 0)
-	{
-		putchar('-');
-		num = -num;
-	}
-	if (num / 10 != 0)
-	printInteger(num / 10);
-	putchar(num % 10 + '0');
-}
-
-/**
- * printString - print the string
- * @num: index in the array
- * @array: pointer to the first element of aray
- */
-void printString(int num, int *array)
-{
-	char string[256] = "Value checked array\n";
-	int j = 0;
-
-	for (j = 0; string[j] != '\n'; j++)
-		putchar(string[j]);
-	putchar('[');
-	printInteger(num);
-	putchar(']');
-	putchar(' ');
-	putchar('=');
-	putchar(' ');
-	putchar('[');
-	printInteger(array[num]);
-	putchar(']');
 	putchar('\n');
 }
