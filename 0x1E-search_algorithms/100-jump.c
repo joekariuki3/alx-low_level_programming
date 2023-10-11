@@ -21,7 +21,7 @@ int jump_search(int *array, size_t size, int value)
 	upper = jump;
 	for (i = lowwer; i <= size; i = i + jump)
 	{
-		printString((int)i, array);
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 		if (value <= array[upper])
 			break;
 		if (value > array[upper])
@@ -35,77 +35,13 @@ int jump_search(int *array, size_t size, int value)
 			upper = size - 1;
 		}
 	}
-	printFound(lowwer, oversize > size ? oversize : upper);
+	oversize = oversize > size ? oversize : upper;
+	printf("Value found between indexes [%ld] and [%ld]\n", lowwer, oversize);
 	for (i = lowwer; i <= upper; i++)
 	{
-		printString((int)i, array);
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 		if (array[i] == value)
 			return (i);
 	}
 	return (-1);
-}
-/**
- * printFound - print the string
- * @lowwer: start of subarray
- * @upper: end of sub array
- */
-void printFound(size_t lowwer, size_t upper)
-{
-	char string[256] = "Value found between indexes\n";
-	int j = 0;
-
-	for (j = 0; string[j] != '\n'; j++)
-		putchar(string[j]);
-	putchar(' ');
-	putchar('[');
-	printInteger((int)lowwer);
-	putchar(']');
-	putchar(' ');
-	putchar('a');
-	putchar('n');
-	putchar('d');
-	putchar(' ');
-	putchar('[');
-	printInteger((int)upper);
-	putchar(']');
-	putchar('\n');
-}
-/**
- * printString - print the string
- * @num: index in the array
- * @array: pointer to the first element of aray
- */
-void printString(int num, int *array)
-{
-	char string[256] = "Value checked array\n";
-	int j = 0;
-
-	for (j = 0; string[j] != '\n'; j++)
-		putchar(string[j]);
-	putchar('[');
-	printInteger(num);
-	putchar(']');
-	putchar(' ');
-	putchar('=');
-	putchar(' ');
-	putchar('[');
-	printInteger(array[num]);
-	putchar(']');
-	putchar('\n');
-}
-/**
- * printInteger - prints number value
- * @num: value to be printed
- * Return: number to be printed
- */
-void printInteger(int num)
-{
-	if (num < 0)
-	{
-		putchar('-');
-		num = -num;
-	}
-	if (num / 10 != 0)
-		printInteger(num / 10);
-	putchar(num % 10 + '0');
 }
