@@ -8,4 +8,6 @@
  * Return: return pointer to the value or NULL if value is missing
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
-{}
+{
+
+}
