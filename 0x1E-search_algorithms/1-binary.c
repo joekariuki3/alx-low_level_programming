@@ -55,37 +55,13 @@ int binary_search(int *array, size_t size, int value)
 void printArray(int *array, size_t newSize)
 {
 	size_t i = 0;
-	char string[256] = "Searching in array:\n";
 
-	for (i = 0; string[i] != '\n'; i++)
-		putchar(string[i]);
-	putchar(' ');
+	printf("Searching in array: ");
 	for (i = 0; i < newSize; i++)
 	{
-		printInteger(array[i]);
+		printf("%d", array[i]);
 		if (i < newSize - 1)
-		{
-			putchar(',');
-			putchar(' ');
-		}
+			printf(", ");
 	}
 	putchar('\n');
 }
-
-/**
- * printInteger - prints number value
- * @num: value to be printed
- * Return: number to be printed
- */
-void printInteger(int num)
-{
-	if (num < 0)
-	{
-		putchar('-');
-		num = -num;
-	}
-	if (num / 10 != 0)
-	printInteger(num / 10);
-	putchar(num % 10 + '0');
-}
-
