@@ -1,0 +1,11 @@
+https://www.youtube.com/watch?v=Z3iGeQ1gIss
+
+https://www.tutorialspoint.com/cprogramming/c_functions.htm
+
+https://www.geeksforgeeks.org/c/what-is-the-purpose-of-a-function-prototype/
+
+https://www.tutorialspoint.com/cprogramming/c_header_files.htm
+
+https://www.youtube.com/watch?v=3i1IPkzFVcM
+
+https://www.youtube.com/watch?v=u40rF7zCYaQ
